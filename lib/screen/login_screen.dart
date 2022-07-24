@@ -45,100 +45,102 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Form(
           key: key,
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                //Icon Login or App
-                Icon(
-                  Icons.person,
-                  color: Colors.teal,
-                  size: 150,
-                ),
-                //Text Of App
-                Text(
-                  'Paradisias',
-                  style: TextStyle(fontSize: 45),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                //Username TextFormFiled
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Colors.grey[200],
-                      ),
-                      child: TextFormField(
-                        controller: textUername,
-                        validator: (e) =>
-                            e!.isEmpty ? 'Champ obligatoire' : null,
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.person),
-                            border: InputBorder.none,
-                            hintText: 'Username'),
-                      )),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                //Password TextFormFiled
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 12),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Colors.grey[200],
-                      ),
-                      child: TextFormField(
-                        controller: textPassword,
-                        validator: (e) =>
-                            e!.isEmpty ? 'Champ obligatoire' : null,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock),
-                            border: InputBorder.none,
-                            hintText: 'Password'),
-                      )),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                //Login Button
-                GestureDetector(
-                  onTap: () {
-                    if (key.currentState!.validate()) {
-                      setState(() {
-                        _loading = true;
-                      });
-                      print('----Connexion----');
-                      _login(textUername.text, textPassword.text);
-                    }
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(12),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  //Icon Login or App
+                  Icon(
+                    Icons.person,
+                    color: Colors.teal,
+                    size: 150,
+                  ),
+                  //Text Of App
+                  Text(
+                    'Paradisias',
+                    style: TextStyle(fontSize: 45),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  //Username TextFormFiled
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.teal,
+                          color: Colors.grey[200],
                         ),
-                        padding: EdgeInsets.all(10),
-                        child: Center(
-                            child: _loading
-                                ? CircularProgressIndicator(
-                                    color: Colors.white,
-                                  )
-                                : Text(
-                                    'Connexion',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 25),
-                                  ))),
+                        child: TextFormField(
+                          controller: textUername,
+                          validator: (e) =>
+                              e!.isEmpty ? 'Champ obligatoire' : null,
+                          decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.person),
+                              border: InputBorder.none,
+                              hintText: 'Username'),
+                        )),
                   ),
-                )
-              ],
+                  SizedBox(
+                    height: 10,
+                  ),
+                  //Password TextFormFiled
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.grey[200],
+                        ),
+                        child: TextFormField(
+                          controller: textPassword,
+                          validator: (e) =>
+                              e!.isEmpty ? 'Champ obligatoire' : null,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.lock),
+                              border: InputBorder.none,
+                              hintText: 'Password'),
+                        )),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  //Login Button
+                  GestureDetector(
+                    onTap: () {
+                      if (key.currentState!.validate()) {
+                        setState(() {
+                          _loading = true;
+                        });
+                        print('----Connexion----');
+                        _login(textUername.text, textPassword.text);
+                      }
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Colors.teal,
+                          ),
+                          padding: EdgeInsets.all(10),
+                          child: Center(
+                              child: _loading
+                                  ? CircularProgressIndicator(
+                                      color: Colors.white,
+                                    )
+                                  : Text(
+                                      'Connexion',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 25),
+                                    ))),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
