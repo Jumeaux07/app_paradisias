@@ -2,11 +2,12 @@ import 'dart:convert';
 
 import 'package:app_paradisias/components/app_bar.dart';
 import 'package:app_paradisias/components/card.dart';
+import 'package:app_paradisias/components/menu_btn.dart';
 import 'package:app_paradisias/constant.dart';
 import 'package:app_paradisias/model/user_model.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -68,9 +69,29 @@ class _HomeScreenState extends State<HomeScreen> {
             controller: _controller,
             count: 3,
             effect: JumpingDotEffect(dotColor: Colors.white,activeDotColor: Colors.teal),
-          )
+          ),
+          SizedBox(height: 10,),
           //Button d'autres actions
-      
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Actions", style: TextStyle(fontWeight: FontWeight.bold),),
+                Icon(Icons.arrow_forward_ios)
+              ],
+            ),
+          ),
+          SizedBox(height:10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              MenuBtn(title: "rapport", icon: telecharger_icon,),
+              MenuBtn(title: "rapport", icon: telecharger_icon,),
+              MenuBtn(title: "rapport", icon: telecharger_icon,),
+            ],
+          )
+
           //Statistique des reservation
         ],),
       ),

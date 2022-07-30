@@ -1,5 +1,6 @@
 // --------------------STRING-------------------
 
+
 const baseUrl = 'https://paradisias-api.herokuapp.com/';
 const auth = 'auth/';
 // --------------------Imgae-------------------
@@ -14,4 +15,6 @@ const maison_icon = 'asset/icons/maison.svg';
 const delete_icon = "asset/icons/poubelle.svg";
 const reglage_icon = "asset/icons/reglages.svg";
 const telecharger_icon = "asset/icons/telecharger.svg";
+
+// --------------------SIZE-------------------
 

@@ -10,9 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Paradisias',
-        theme: ThemeData(primarySwatch: Colors.teal, fontFamily: 'Raleway'),
-        home: LoginScreen());
+      debugShowCheckedModeBanner: false,
+      title: 'Paradisias',
+      theme: ThemeData(primarySwatch: Colors.teal, fontFamily: 'Raleway'),
+      home: LoginScreen()
+    );
   }
 }

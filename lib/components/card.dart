@@ -7,9 +7,10 @@ class CardApp extends StatelessWidget {
   final String montant;
   final String date;
   final Color color;
-  const CardApp({ Key? key, required this.title, required this.icon, required this.montant, required this.date, required this.color }) : super(key: key);
+   CardApp({ Key? key, required this.title, required this.icon, required this.montant, required this.date, required this.color }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+  Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -24,14 +25,14 @@ class CardApp extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(this.title, style: TextStyle(color: Colors.white, fontSize: 25),),
+                        Text(this.title, style: TextStyle(color: Colors.white, fontSize: size.width*0.05),),
                         SvgPicture.asset(this.icon, color: Colors.white,),
                       ],
                     ),
                     Text(this.montant,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 55,
+                        fontSize: size.width * 0.13,
                         fontWeight: FontWeight.bold
                       ),
                     ),
